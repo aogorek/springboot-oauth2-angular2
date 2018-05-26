@@ -1,0 +1,28 @@
+<div >
+  <mat-toolbar color="primary">
+    <button mat-icon-button routerLink="/">
+      <mat-icon>home</mat-icon>
+    </button>
+
+    <span class="logo">Spring Angular2 Oauth2 demo application</span>
+    <div _ngcontent-c1="" class="flex-spacer"></div>
+    <div class="right_side">
+      <div *ngIf="isLogged">
+        <button mat-icon-button routerLink="/users"  matTooltip="Manage users">
+          <mat-icon>group</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="loggedUserMenu" matTooltip='Welcome {{firstName}}!'>
+          <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #loggedUserMenu="matMenu">
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar>
+
+
+</div>

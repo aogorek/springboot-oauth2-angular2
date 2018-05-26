@@ -1,0 +1,61 @@
+<div class="user-table-container mat-elevation-z8">
+  <div class="user-table">
+    <mat-input-container floatPlaceholder="never">
+      <input matInput #filter placeholder="Search for users">
+    </mat-input-container>
+      <button  (click)="newUser()"  matTooltip="Add new User"  class="new-user btn btn-primary ">
+        <mat-icon>person_add</mat-icon>
+      </button>
+  </div>
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <ng-container cdkColumnDef="id">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> Id </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="firstName">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> First name </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="lastName">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.lastName}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="email">
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> email </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="action">
+      <mat-header-cell *cdkHeaderCellDef > </mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
+        <button  (click)="editUser(row.id)">
+          <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button  (click)="deleteUser(row.id)">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <div class="user-table-no-results"
+       [style.display]="dataSource?.renderedData.length == 0 ? '' : 'none'">
+   No users for selected filter
+  </div>
+
+  <mat-paginator #paginator
+                 [length]="dataSource?.filteredData.length"
+                 [pageIndex]="0"
+                 [pageSize]="25"
+                 [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+</div>

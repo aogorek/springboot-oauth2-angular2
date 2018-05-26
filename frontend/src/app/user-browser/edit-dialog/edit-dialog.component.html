@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Edit User</h1>
+<div mat-dialog-content [formGroup]="userForm">
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.user.firstName" placeholder="First name" formControlName="firstNameFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.user.lastName" placeholder="Last name" formControlName="lastNameFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.user.email" placeholder="Email"  formControlName="emailFormControl">
+      <mat-error *ngIf="userForm.get('emailFormControl').invalid">
+       Please enter valid email
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field>
+    <mat-select [compareWith]="compareRoles" placeholder="Rola" [(ngModel)]="data.user.role"  [(value)]="data.user.role"  formControlName="roleFormControl">
+      <mat-option *ngFor="let role of roles" [value]="role">
+        {{role.description}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="userForm.get('roleFormControl').invalid">
+      Please select a role
+    </mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial [disabled]="!userForm.valid">Save</button>
+</div>

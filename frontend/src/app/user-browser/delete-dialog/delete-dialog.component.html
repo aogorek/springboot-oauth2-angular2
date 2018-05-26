@@ -1,0 +1,8 @@
+<p>
+ Do You really want to delete selected user?
+</p>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial >Cancel</button>
+  <button mat-button [mat-dialog-close]="data" >Yes, delete</button>
+</div>
+
