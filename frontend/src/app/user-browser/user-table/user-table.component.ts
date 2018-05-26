@@ -10,6 +10,7 @@ import {Observable} from 'rxjs/Observable';
 import {UserService} from '../../services';
 import {User} from '../../models';
 import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/fromEvent';
 
 @Component({
   selector: 'app-user-table',
