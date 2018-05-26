@@ -3,4 +3,4 @@ export const environment = {
 };
 
 
-export const baseApiUrl = "http://localhost:4200";
+export const baseApiUrl = "";

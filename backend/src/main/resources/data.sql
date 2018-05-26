@@ -1,5 +1,4 @@
-insert into t_user(id, email, first_name, last_name, password, account_non_expired, account_non_locked, credentials_not_expired, enabled) values(1, 'anatol.ogorek@gmail.com', 'Anatol', 'Ogórek', '$2a$04$8RiZd2s3AvJv1iu.PJJdXOsC2I8drtTlHUuihGOhzyN0/GRdLW4Oy', true, true, true, true);
-insert into t_user(id, email, first_name, last_name, password, account_non_expired, account_non_locked, credentials_not_expired, enabled) values(2, 'barozanski@gmail.com', 'Bartosz', 'Różański', '$2a$04$fDycn2BgbeD20cu7yOxkp.yA9AnD.tHH5vvCPDpsUITOhE4PeEIlS', true, true, true, true);--qazwsx
+insert into t_user(id, email, first_name, last_name, password, account_non_expired, account_non_locked, credentials_not_expired, enabled) values(0, 'user@user.com', 'John', 'Smith', '$2a$04$o4k0H3vYDbXzWg8Yv3HIlO1gu2hERD6I3jkHkBcWmEF0SGLYfqNdy', true, true, true, true);
 
 insert into t_privilege (id, name) values (1, 'RIGHT_EDIT_USERS');
 insert into t_privilege (id, name) values (2, 'RIGHT_ADD_USER');
