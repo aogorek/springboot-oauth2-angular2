@@ -2,6 +2,10 @@
 
 Sample application for Spring Oauth2 Angular 2,4,5 App
 
+You will find some notes about this app on my blog:
+
+https://regulargeek.blogspot.com/2018/05/angular-5-springboot-2-oauth2-and.html
+
 App uses SpringBoot 2, Spring Security 5, angular-oauth2-oidc library for angular oauth support.
 
 It provides support for:
