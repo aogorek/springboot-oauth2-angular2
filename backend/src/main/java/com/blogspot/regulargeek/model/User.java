@@ -12,6 +12,10 @@ import java.util.List;
 @SequenceGenerator(name = "seqUser", sequenceName = "seq_user_id")
 public class User implements UserDetails {
     @Id
+    @SequenceGenerator(initialValue=2,
+            allocationSize=1,
+            name = "seqUser",
+            sequenceName="seqUser")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqUser")
     private long id;
 

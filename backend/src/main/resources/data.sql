@@ -1,4 +1,4 @@
-insert into t_user(id, email, first_name, last_name, password, account_non_expired, account_non_locked, credentials_not_expired, enabled) values(0, 'user@user.com', 'John', 'Smith', '$2a$04$o4k0H3vYDbXzWg8Yv3HIlO1gu2hERD6I3jkHkBcWmEF0SGLYfqNdy', true, true, true, true);
+insert into t_user(id, email, first_name, last_name, password, account_non_expired, account_non_locked, credentials_not_expired, enabled) values(1, 'user@user.com', 'John', 'Smith', '$2a$04$o4k0H3vYDbXzWg8Yv3HIlO1gu2hERD6I3jkHkBcWmEF0SGLYfqNdy', true, true, true, true);
 
 insert into t_privilege (id, name) values (1, 'RIGHT_EDIT_USERS');
 insert into t_privilege (id, name) values (2, 'RIGHT_ADD_USER');
